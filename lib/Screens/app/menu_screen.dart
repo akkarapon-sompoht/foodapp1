@@ -94,7 +94,7 @@ class _MenuPageState extends State<MenuPage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.orange.shade100,
+      backgroundColor: Colors.brown.shade100,
       appBar: searchBar.build(context),
       key: _scaffoldKey,
       body: Background(
@@ -114,7 +114,7 @@ class _MenuPageState extends State<MenuPage> {
                   return Container(
                     height: 200,
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Colors.grey.shade100,
                         borderRadius: BorderRadius.all(
                           Radius.circular(
                             20,
@@ -128,11 +128,11 @@ class _MenuPageState extends State<MenuPage> {
                           MaterialPageRoute(
                             // ignore: missing_required_param
                             builder: (context) => FoodAppPage(
-                              number: templeList[index].number,
-                              name: templeList[index].name,
-                              raw_material: templeList[index].raw_material,
-                              how_to: templeList[index].how_to,
-                              img: templeList[index].img,
+                              number: templeListShow[index].number,
+                              name: templeListShow[index].name,
+                              raw_material: templeListShow[index].raw_material,
+                              how_to: templeListShow[index].how_to,
+                              img: templeListShow[index].img,
                             ),
                           ),
                         );
@@ -140,6 +140,7 @@ class _MenuPageState extends State<MenuPage> {
                       child: Column(
                         children: [
                           Container(
+                            padding: EdgeInsets.all(8.0),
                             decoration: ShapeDecoration(
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.vertical(
@@ -149,13 +150,13 @@ class _MenuPageState extends State<MenuPage> {
                               ),
                             ),
                             child: Image.network(
-                              "${templeList[index].img}",
+                              "${templeListShow[index].img}",
                               height: 150,
                               fit: BoxFit.cover,
                             ),
                           ),
                           SizedBox(
-                          height: 10,
+                          height: 5,
                           ),
                           ListView(
                             shrinkWrap: true,
@@ -163,9 +164,9 @@ class _MenuPageState extends State<MenuPage> {
                               Container(
                                   alignment: FractionalOffset.center,
                                   width: double.infinity,
-                                  child: Text('${templeList[index].name}',
+                                  child: Text('${templeListShow[index].name}',
                                   style: GoogleFonts.sriracha(
-                                  fontSize: 12,
+                                  fontSize: 13,
                                   color: Colors.red, 
                                   fontWeight: FontWeight.bold,),
                                   )),

@@ -37,7 +37,7 @@ class _FoodAppPageState extends State<FoodAppPage> {
     print(widget.img);
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.brown.shade50,
       appBar: AppBar(
          backgroundColor: Colors.orange.shade600,
         title: Text(
