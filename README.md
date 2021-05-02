@@ -43,8 +43,6 @@
 
 - http: [link](https://pub.dev/packages/http)
 
-- geolocator: [link](https://pub.dev/packages/geolocator)
-
 - flutter_search_Bar: [link](https://pub.dev/packages/flutter_search_bar)
 
 - google_fonts: [link](https://pub.dev/packages/google_fonts)
