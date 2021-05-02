@@ -180,7 +180,7 @@ class TemplelData {
 
 ## การส่งข้อมูลระหว่างหน้า
 
-ข้อมูลหน้าแรก(index or travel_screen) ไปยังหน้าที่2 (travel_view)
+ข้อมูลหน้าแรก(index or menu_screen) ไปยังหน้าที่2 (food_app)
 
     onTap: () {
                         Navigator.push(
