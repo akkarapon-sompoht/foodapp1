@@ -50,10 +50,10 @@
 
 ## การอ่านไฟล์Json
 
-class _MenuPageState extends State<MenuPage> {
+class MenuPageState extends State<MenuPage> {
 var jsonData;
 List<TemplelData> templeList = [];
-Future<String> _getMenuAPI() async {
+Future<String> getMenuAPI() async {
     var response = await Http.get('https://akkarapon-sompoht.github.io/templel/foodapp.json');
 
 
@@ -67,14 +67,6 @@ Future<String> _getMenuAPI() async {
           item['how_to'], 
           item['img']);
       templeList.add(templelData);
-    }
-    if (searchKey == 200) {
-      templeListShow = templeList;
-    } else {
-      print(searchKey);
-      templeListShow = templeList
-          .where((element) => element.name.startsWith(searchKey))
-          .toList();
     }
 
     return 'jsonData';
@@ -104,11 +96,9 @@ Future<String> _getMenuAPI() async {
                         )),
                     child: InkWell(
                       onTap: () {
-                        // ! Use templeListShow to display temple data
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            // ignore: missing_required_param
                             builder: (context) => FoodAppPage(
                               number: templeListShow[index].number,
                               name: templeListShow[index].name,
@@ -175,7 +165,12 @@ class TemplelData {
   String how_to;
   String img;
 
-  TemplelData(this.number, this.name, this.raw_material, this.how_to, this.img);
+  TemplelData(
+this.number, 
+this.name, 
+this.raw_material, 
+this.how_to, 
+this.img);
   startsWith(String searchKey) {}
 }
 
