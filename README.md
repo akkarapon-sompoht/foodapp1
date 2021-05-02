@@ -76,8 +76,15 @@ Future<String> _getMenuAPI() async {
     return 'jsonData';
 
   }
-
-  child: FutureBuilder(
+@override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    return Scaffold(
+      backgroundColor: Colors.brown.shade100,
+      appBar: searchBar.build(context),
+      key: _scaffoldKey,
+      body: Background(
+        child: FutureBuilder(
           future: _getMenuAPI(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
@@ -172,8 +179,12 @@ class TemplelData {
   String how_to;
   String img;
 
-  TemplelData(this.number, this.name, this.raw_material, this.how_to, this.img);
-  startsWith(String searchKey) {}
+  TemplelData(
+      this.number, 
+      this.name, 
+      this.raw_material, 
+      this.how_to, 
+      this.img);
 }
 
 ## การส่งข้อมูลระหว่างหน้า
