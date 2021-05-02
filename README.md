@@ -74,7 +74,7 @@ Future<String> _getMenuAPI() async {
     }
 
     return 'jsonData';
-    
+
   }
 
   child: FutureBuilder(
@@ -101,9 +101,11 @@ Future<String> _getMenuAPI() async {
                         )),
                     child: InkWell(
                       onTap: () {
+                        // ! Use templeListShow to display temple data
                         Navigator.push(
                           context,
                           MaterialPageRoute(
+                            // ignore: missing_required_param
                             builder: (context) => FoodAppPage(
                               number: templeListShow[index].number,
                               name: templeListShow[index].name,
@@ -170,15 +172,9 @@ class TemplelData {
   String how_to;
   String img;
 
-  TemplelData(
-this.number, 
-this.name, 
-this.raw_material, 
-this.how_to, 
-this.img);
+  TemplelData(this.number, this.name, this.raw_material, this.how_to, this.img);
   startsWith(String searchKey) {}
 }
-
 
 ## การส่งข้อมูลระหว่างหน้า
 
