@@ -47,6 +47,7 @@ flutter_search_Bar: link
 google_fonts: link
 
 การอ่านไฟล์Json
+
 class _MenuPageState extends State<MenuPage> {
 var jsonData;
 List<TemplelData> templeList = [];
@@ -76,6 +77,8 @@ Future<String> _getMenuAPI() async {
 
     return 'jsonData';
   }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -188,7 +191,9 @@ class TemplelData {
       this.img);
   startsWith(String searchKey) {}
 }
+
 การส่งข้อมูลระหว่างหน้า
+
 ข้อมูลหน้าแรก(index or menu_screen) ไปยังหน้าที่2 (food_app)
 
                     onTap: () {
@@ -208,4 +213,5 @@ class TemplelData {
                       },
 
 ตัวอย่างหน้าจอ
+
 ![img](./img.jpg)
