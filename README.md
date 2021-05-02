@@ -49,7 +49,7 @@
 
 
 ## การอ่านไฟล์Json
-
+'''dart
 class _MenuPageState extends State<MenuPage> {
   var jsonData;
   List<TemplelData> templeList = [];
@@ -175,11 +175,11 @@ class TemplelData {
   TemplelData(this.number, this.name, this.raw_material, this.how_to, this.img);
   startsWith(String searchKey) {}
 }
-
+'''
 ## การส่งข้อมูลระหว่างหน้า
 
 ข้อมูลหน้าแรก(index or menu_screen) ไปยังหน้าที่2 (food_app)
-
+'''dart
     onTap: () {
                         Navigator.push(
                           context,
@@ -195,7 +195,7 @@ class TemplelData {
                           ),
                         );
                       },
-
+'''
 ## ตัวอย่างหน้าจอ
 
 ![img](./img.jpg)
