@@ -53,24 +53,28 @@
 class MenuPageState extends State<MenuPage> {
 var jsonData;
 List<TemplelData> templeList = [];
-Future<String> getMenuAPI() async {
-    var response = await Http.get('https://akkarapon-sompoht.github.io/templel/foodapp.json');
+Future<String> _getMenuAPI() async {
+    var response = await Http.get(
+        'https://akkarapon-sompoht.github.io/templel/foodapp.json');
 
-
- jsonData = json.decode(utf8.decode(response.bodyBytes));
+    jsonData = json.decode(utf8.decode(response.bodyBytes));
     templeList.clear();
     for (var item in jsonData) {
-      TemplelData templelData = TemplelData(
-          item['number'], 
-          item['name'],
-          item['raw material'], 
-          item['how to'], 
-          item['img']);
+      TemplelData templelData = TemplelData(item['number'], item['name'],
+          item['raw_material'], item['how_to'], item['img']);
       templeList.add(templelData);
+    }
+    if (searchKey == 200) {
+      templeListShow = templeList;
+    } else {
+      print(searchKey);
+      templeListShow = templeList
+          .where((element) => element.name.startsWith(searchKey))
+          .toList();
     }
 
     return 'jsonData';
-
+    
   }
 
   child: FutureBuilder(
