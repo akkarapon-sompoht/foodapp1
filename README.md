@@ -1,3 +1,4 @@
+# SimpleToDoList
 พัฒนาโดย
 
 นายอัครพล สมโภชน์
@@ -14,7 +15,7 @@
 
 คณะศิลปศาสตร์และวิทยาศาสตร์ มหาวิทยาลัยราชภัฏศรีสะเกษ
 
-Description:
+**Description:**
 
 โปรแกรม i'am a cook เป็นโปรแกรมเพื่อใช้สำหรับการค้นหาข้อมูลในการทำอาหาร โดยการอ่านJson เพื่อใช้ในการแสดงผลข้อมูลที่เราค้นหา
 
@@ -34,19 +35,20 @@ Description:
 
 5.หน้าข้อมูลอาหาร วิธีทำ และส่วนผสม
 
-Packages we are using:
+**Packages we are using:**
 
-fluuter: link
+- fluuter: [link](https://pub.dev/packages/flutter_svg)
 
-http: link
+- http: [link](https://pub.dev/packages/http)
 
-geolocator: link
+- geolocator: [link](https://pub.dev/packages/geolocator)
 
-flutter_search_Bar: link
+- flutter_search_Bar: [link](https://pub.dev/packages/flutter_search_bar)
 
-google_fonts: link
+- google_fonts: [link](https://pub.dev/packages/google_fonts)
 
-การอ่านไฟล์Json
+
+## การอ่านไฟล์Json
 
 class _MenuPageState extends State<MenuPage> {
 var jsonData;
@@ -78,17 +80,7 @@ Future<String> _getMenuAPI() async {
     return 'jsonData';
   }
 
-
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Scaffold(
-      backgroundColor: Colors.brown.shade100,
-      appBar: searchBar.build(context),
-      key: _scaffoldKey,
-      body: Background(
-        child: FutureBuilder(
+  child: FutureBuilder(
           future: _getMenuAPI(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
@@ -183,16 +175,12 @@ class TemplelData {
   String how_to;
   String img;
 
-  TemplelData(
-      this.number, 
-      this.name, 
-      this.raw_material, 
-      this.how_to, 
-      this.img);
+  TemplelData(this.number, this.name, this.raw_material, this.how_to, this.img);
   startsWith(String searchKey) {}
 }
 
-การส่งข้อมูลระหว่างหน้า
+
+## การส่งข้อมูลระหว่างหน้า
 
 ข้อมูลหน้าแรก(index or menu_screen) ไปยังหน้าที่2 (food_app)
 
@@ -212,6 +200,6 @@ class TemplelData {
                         );
                       },
 
-ตัวอย่างหน้าจอ
+## ตัวอย่างหน้าจอ
 
 ![img](./img.jpg)
