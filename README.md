@@ -1,4 +1,5 @@
 # SimpleToDoList
+
 พัฒนาโดย
 
 นายอัครพล สมโภชน์
@@ -15,7 +16,7 @@
 
 คณะศิลปศาสตร์และวิทยาศาสตร์ มหาวิทยาลัยราชภัฏศรีสะเกษ
 
-**Description:**
+## Description:
 
 โปรแกรม i'am a cook เป็นโปรแกรมเพื่อใช้สำหรับการค้นหาข้อมูลในการทำอาหาร โดยการอ่านJson เพื่อใช้ในการแสดงผลข้อมูลที่เราค้นหา
 
@@ -35,6 +36,7 @@
 
 5.หน้าข้อมูลอาหาร วิธีทำ และส่วนผสม
 
+
 **Packages we are using:**
 
 - fluuter: [link](https://pub.dev/packages/flutter_svg)
@@ -50,10 +52,10 @@
 
 ## การอ่านไฟล์Json
 
-class MenuPageState extends State<MenuPage> {
-var jsonData;
-List<TemplelData> templeList = [];
-Future<String> _getMenuAPI() async {
+class _MenuPageState extends State<MenuPage> {
+  var jsonData;
+  List<TemplelData> templeList = [];
+  Future<String> _getMenuAPI() async {
     var response = await Http.get(
         'https://akkarapon-sompoht.github.io/templel/foodapp.json');
 
@@ -74,16 +76,9 @@ Future<String> _getMenuAPI() async {
     }
 
     return 'jsonData';
-
+  
   }
-@override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Scaffold(
-      backgroundColor: Colors.brown.shade100,
-      appBar: searchBar.build(context),
-      key: _scaffoldKey,
-      body: Background(
+
         child: FutureBuilder(
           future: _getMenuAPI(),
           builder: (context, snapshot) {
@@ -179,19 +174,15 @@ class TemplelData {
   String how_to;
   String img;
 
-  TemplelData(
-      this.number, 
-      this.name, 
-      this.raw_material, 
-      this.how_to, 
-      this.img);
+  TemplelData(this.number, this.name, this.raw_material, this.how_to, this.img);
+  startsWith(String searchKey) {}
 }
 
 ## การส่งข้อมูลระหว่างหน้า
 
-ข้อมูลหน้าแรก(index or menu_screen) ไปยังหน้าที่2 (food_app)
+ข้อมูลหน้าแรก(index or travel_screen) ไปยังหน้าที่2 (travel_view)
 
-                    onTap: () {
+    onTap: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
