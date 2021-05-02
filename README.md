@@ -63,13 +63,14 @@ Future<String> getMenuAPI() async {
       TemplelData templelData = TemplelData(
           item['number'], 
           item['name'],
-          item['raw_material'], 
-          item['how_to'], 
+          item['raw material'], 
+          item['how to'], 
           item['img']);
       templeList.add(templelData);
     }
 
     return 'jsonData';
+
   }
 
   child: FutureBuilder(
